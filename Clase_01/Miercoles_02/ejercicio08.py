@@ -18,6 +18,9 @@ print("El telefono de Alvaro es:", telefonoAlvaro)
 print("El telefono de Atilio es:", telefonoAtilio)
 
 # Los diccionarios tienen funciones de altas, bajas y modificaciones
+## Alta de un nuevo numero
 agendaDeTelefonos["Juan"] = "11-2716-9270"
+## Modificación de nuevo numero
+agendaDeTelefonos["Alvaro"] = "11-2716-9270"
 
 print(agendaDeTelefonos)
