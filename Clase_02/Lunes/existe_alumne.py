@@ -12,6 +12,7 @@ lista_alumnos = [
 ]
 
 dni_buscar = "12345678"
+
 if ExisteAlumno(dni_buscar):
     print(f"El alumno con DNI {dni_buscar} existe en la lista.")
 else:
