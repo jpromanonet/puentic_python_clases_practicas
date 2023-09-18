@@ -21,9 +21,11 @@ caminos = ("izquierda", "derecha")
 
 # Creamos una función para iniciar el juego
 def jugar_aventura():
+
     # Nivel actual de jugador
     nivel = 1
     niveles_totales = random.randint(3,10)
+
     print("Bienvenide a la Aventura en el Bosque Oscuro")
     print("Estás en la entrada del bosque. Debes tomar decisiones para avanzar")
     print("Tu objetivo es encontrar el tesoro oculto al final del bosque.\n")
@@ -36,7 +38,7 @@ def jugar_aventura():
             print("¡Esa no es una elección valida!, elegi entre el camino de la derecha o la izquierda")
         else:
             if eleccion == "izquierda":
-                encuentro_criatura()
+                encuentro_criatura(nivel)
             else:
                 encontrar_objeto()
 
@@ -46,19 +48,22 @@ def jugar_aventura():
     print("Tu aventura ha llegado a su fin.")
 
 # Función para el encuentro con una criatura mágica
-def encuentro_criatura():
+def encuentro_criatura(nivel_jugador):
     criatura = random.choice(list(criaturas_magicas.keys()))
-    print(f"\n¡{criatura.capitalize()}!")
-    print(criaturas_magicas[criatura])
+    nivel_criatura = random.randint(1,9)
 
-    decision = input("¿Qué vas a hacer? (atacar/huir): ").lower()
-
-    if decision == "atacar":
-        print(f'¡Has derrotado al {criatura} y puedes continuar!.')
-    elif decision == "huir":
-        print("Escapas del peligro y continuas tu camino.")
+    print(f"\n¡{criatura.capitalize()} de nivel {nivel_criatura}!")
+    
+    if nivel_jugador >= nivel_criatura:
+        decision = input("¿Qué vas a hacer? (atacar/huir): ").lower()
+        if decision == "atacar":
+            print(f'Has derrotado a {criatura} y ganaste {nivel_criatura} de experiencia.')
+        elif decision == "huir":
+            print("Escapas del peligro y continuas tu camino.")
+        else:
+            print("Decisión no valida, debes elegir entre atacar o huir.")
     else:
-        print("Decisión no valida, tenes que elegir entre atacar o huir.")
+        print("El nivel de la criatura es demasiado alto. ¡Debes huir!.")
 
 # Vamos a crear una función para encontrar un objeto
 def encontrar_objeto():
