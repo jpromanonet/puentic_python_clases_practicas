@@ -5,7 +5,7 @@ def ExisteAlumno(dni_buscar):
             return True
         return False
 
-# Creo una lista de alumnoes
+# Creo una lista de alumnes
 lista_alumnos = [
     {"nombre": "Juan", "dni": "12345678"},
     {"nombre": "Marcelo", "dni": "12345679"},
