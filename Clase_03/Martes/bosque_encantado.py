@@ -62,11 +62,13 @@ def encuentro_criatura(nivel_jugador):
             print(f"Has derrotado a {criatura} y ganaste {nivel_criatura} de experiencia.")
         elif decision == "huir":
             print("Escapas del peligro y continuas tu camino.")
-            nivel_jugador -= 1
+            return False
         else:
             print("Decisión no valida, debes elegir entre atacar o huir.")
+            return False
     else: 
         print("El nivel de la criatura es demasiado alto. ¡Debes huir!")
+        return False
 
 # Vamos a crear una función para encontrar un objeto
 def encontrar_objeto():
@@ -75,10 +77,10 @@ def encontrar_objeto():
 
     decision = input(f'¿Queres agarrar {objeto_encontrado}? Elegi si(s) o no(n): ').lower()
 
-    if decision == "si" or "s":
+    if decision == "si" or decision == "s":
         mochila.append(objeto_encontrado)
         print(f'Agarraste {objeto_encontrado} y lo guardaste en tu mochila.')
-    elif decision == "no" or "n":
+    elif decision == "no" or decision == "n":
         print("Decides dejar el objeto y continuar tu camino.")
     else:
         print("Decisión no valida. Tenes que elegir entre si(s) o no(n).")

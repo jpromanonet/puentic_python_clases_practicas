@@ -72,10 +72,10 @@ def encontrar_objeto():
 
     decision = input("¿Deseas agarrarlo? (si/no): ").lower()
 
-    if decision == "si" or "s":
+    if decision == "si" or decision == "s":
         mochila.append(objeto_encontrado)
         print(f'Agarraste {objeto_encontrado} y lo guardaste en tu mochila.')
-    elif decision == "no" or "n":
+    elif decision == "no" or decision == "n":
         print("Decides dejar el objeto y continuar tu camino")
     else:
         print("Decisión no válida. Elige si(s) o no(n)")
