@@ -1,6 +1,6 @@
 # Importar las librerias para el juego
 import random
-import time 
+import time
 
 # Tenemos que crear una clase para ejecutar el juego
 class JugarAventura:
