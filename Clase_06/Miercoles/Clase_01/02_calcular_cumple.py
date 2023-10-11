@@ -30,4 +30,4 @@ if __name__ == "__main__":
         dias_faltantes = tiempo_faltante.days
         print(f'Faltan {dias_faltantes} días para su proximo cumpleaños.')
     except ValueError:
-        print('Formato de fecha incorrento. Utlice dd/mm/aaaa.')
+        print('Formato de fecha incorrento. Utilice dd/mm/aaaa.')
